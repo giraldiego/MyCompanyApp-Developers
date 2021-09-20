@@ -1,6 +1,6 @@
 namespace Domain
 {
-    public class Client
+    public class Client : Person
     {
         public String Phone { get; set; }
     }
