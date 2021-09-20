@@ -2,7 +2,8 @@ namespace Domain
 {
     public class Company
     {
-        public String Nit { get; set; }
-        public String Name { get; set; }
+        public int Id { get; set; }
+        public string Nit { get; set; }
+        public string Name { get; set; }
     }
 }
