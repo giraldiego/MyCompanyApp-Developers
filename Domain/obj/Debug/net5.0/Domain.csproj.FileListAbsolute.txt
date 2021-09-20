@@ -1,0 +1,12 @@
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.csproj.AssemblyReference.cache
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.AssemblyInfoInputs.cache
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.AssemblyInfo.cs
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.csproj.CoreCompileInputs.cache
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/bin/Debug/net5.0/Domain.deps.json
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/bin/Debug/net5.0/Domain.dll
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/bin/Debug/net5.0/ref/Domain.dll
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/bin/Debug/net5.0/Domain.pdb
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.dll
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/ref/Domain.dll
+/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/Debug/net5.0/Domain.pdb
