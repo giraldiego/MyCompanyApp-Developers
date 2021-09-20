@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/oscar/Documentos/MinTic/Company/Domain/Domain.csproj": {}
+    "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/oscar/Documentos/MinTic/Company/Domain/Domain.csproj": {
+    "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oscar/Documentos/MinTic/Company/Domain/Domain.csproj",
+        "projectUniqueName": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/oscar/Documentos/MinTic/Company/Domain/Domain.csproj",
+        "projectPath": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj",
         "packagesPath": "/home/oscar/.nuget/packages/",
-        "outputPath": "/home/oscar/Documentos/MinTic/Company/Domain/obj/",
+        "outputPath": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oscar/.nuget/NuGet/NuGet.Config"
