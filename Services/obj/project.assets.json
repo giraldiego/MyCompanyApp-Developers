@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "/home/oscar/.nuget/packages/": {}
+    "/home/giraldiego/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/oscar/Documentos/MinTic/Company/Services/Services.csproj",
+      "projectUniqueName": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Services/Services.csproj",
       "projectName": "Services",
-      "projectPath": "/home/oscar/Documentos/MinTic/Company/Services/Services.csproj",
-      "packagesPath": "/home/oscar/.nuget/packages/",
-      "outputPath": "/home/oscar/Documentos/MinTic/Company/Services/obj/",
+      "projectPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Services/Services.csproj",
+      "packagesPath": "/home/giraldiego/.nuget/packages/",
+      "outputPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Services/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/oscar/.nuget/NuGet/NuGet.Config"
+        "/home/giraldiego/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -252,7 +252,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/5.0.206/RuntimeIdentifierGraph.json"
       }
     }
   }

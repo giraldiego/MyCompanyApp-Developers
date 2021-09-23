@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fArcgoMRpFajT9OkTsel6X+mbfVX1n6c0ouZozFZvuWZ8jxs9PmY5XNRX+onB0KMrvu+7XeMCqCleFsn83pzNw==",
+  "dgSpecHash": "ngqThGGiij1EkmUxFSFcBTT9WeujLrUY8zXRG6XF3/qHTJoy5HFspTF0gCmdf+03ErgAZR/+Xjedsr6CXk/9wQ==",
   "success": true,
-  "projectFilePath": "/home/oscar/Documentos/MinTic/Company/Services/Services.csproj",
+  "projectFilePath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Services/Services.csproj",
   "expectedPackageFiles": [
-    "/home/oscar/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "/home/oscar/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
-    "/home/oscar/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "/home/oscar/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "/home/oscar/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "/home/oscar/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "/home/giraldiego/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
   ],
   "logs": []
 }
