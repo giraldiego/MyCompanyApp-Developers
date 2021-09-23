@@ -5,7 +5,7 @@
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Humanizer.dll": {}
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
@@ -133,7 +133,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "5.0.10"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/netstandard2.1/_._": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -5814,19 +5814,19 @@
     ]
   },
   "packageFolders": {
-    "/home/oscar/.nuget/packages/": {}
+    "/home/giraldiego/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Persistence/Persistence.csproj",
+      "projectUniqueName": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Persistence/Persistence.csproj",
-      "packagesPath": "/home/oscar/.nuget/packages/",
-      "outputPath": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Persistence/obj/",
+      "projectPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
+      "packagesPath": "/home/giraldiego/.nuget/packages/",
+      "outputPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/oscar/.nuget/NuGet/NuGet.Config"
+        "/home/giraldiego/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5838,8 +5838,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj": {
-              "projectPath": "/home/oscar/Documentos/MinTic/Ciclo3/myCompanyApp-Developers/Domain/Domain.csproj"
+            "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj": {
+              "projectPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj"
             }
           }
         }
@@ -5859,6 +5859,8 @@
             "version": "[5.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.10, )"
           },
@@ -5867,6 +5869,8 @@
             "version": "[5.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.10, )"
           }
@@ -5886,7 +5890,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/5.0.206/RuntimeIdentifierGraph.json"
       }
     }
   }
