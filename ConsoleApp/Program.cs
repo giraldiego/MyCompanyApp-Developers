@@ -8,32 +8,54 @@ namespace ConsoleApp
     {
         private static IRepoPerson _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
+        private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
+
+
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Entity Framework!");
 
-            CreateTestManager();
-            Console.WriteLine("Test Manager created!");
+            Console.WriteLine("\nTesting Manager CRUD");
 
-            Console.WriteLine(_repoManager.Delete(12));
+            var dummyManager = (Manager)CreateTestManager();
+
+            Console.WriteLine("Test Manager created!");
 
             Console.WriteLine(_repoManager.List());
 
-            Console.WriteLine(_repoManager.Detail(1).Name);
+            Console.WriteLine(_repoManager.Delete(99));
 
-            CreateTestPerson();
+            Console.WriteLine(_repoManager.Detail(dummyManager.PersonId).Name);
+
+
+            Console.WriteLine("\nTesting Person CRUD");
+
+            var dummyPerson = (Person)CreateTestPerson();
             Console.WriteLine("Test Person created!");
 
-            Console.WriteLine(_repoPerson.Delete(12));
+            Console.WriteLine(_repoPerson.Delete(99));
 
             Console.WriteLine(_repoPerson.List());
 
-            Console.WriteLine(_repoPerson.Detail(2).Name);
+            Console.WriteLine(_repoPerson.Detail(dummyPerson.PersonId).Name);
+
+            Console.WriteLine("\nTesting Client CRUD");
+
+            var dummyClient = (Client)CreateTestClient();
+            Console.WriteLine("Test Client created!");
+
+            Console.WriteLine(_repoClient.Delete(99));
+
+            Console.WriteLine(_repoClient.List());
+
+            Console.WriteLine(_repoClient.Detail(dummyClient.PersonId).Name);
+
+            Console.WriteLine("\nTests completed");
 
         }
 
-        private static void CreateTestManager()
+        private static Object CreateTestManager()
         {
             var dummy = new Manager
             {
@@ -45,10 +67,11 @@ namespace ConsoleApp
             };
 
             var newEntity = _repoManager.Create(dummy);
+            return newEntity;
         }
 
 
-        private static void CreateTestPerson()
+        private static Object CreateTestPerson()
         {
             var dummy = new Person
             {
@@ -57,6 +80,20 @@ namespace ConsoleApp
             };
 
             var newEntity = _repoPerson.Create(dummy);
+            return newEntity;
+        }
+
+        private static Object CreateTestClient()
+        {
+            var dummy = new Client
+            {
+                Name = "Harmony Granger",
+                DateOfBirth = new DateTime(1994, 2, 16),
+                PhoneNumber = "555-567890"
+            };
+
+            var newEntity = _repoClient.Create(dummy);
+            return newEntity;
         }
     }
 }
