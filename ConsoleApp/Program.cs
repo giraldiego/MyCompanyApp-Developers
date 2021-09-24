@@ -8,6 +8,9 @@ namespace ConsoleApp
     {
         private static IRepoPerson _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
+        private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
+
+
 
         static void Main(string[] args)
         {
@@ -30,6 +33,15 @@ namespace ConsoleApp
             Console.WriteLine(_repoPerson.List());
 
             Console.WriteLine(_repoPerson.Detail(2).Name);
+
+            CreateTestClient();
+            Console.WriteLine("Test Client created!");
+
+            Console.WriteLine(_repoClient.Delete(12));
+
+            Console.WriteLine(_repoClient.List());
+
+            Console.WriteLine(_repoClient.Detail(9).Name);
 
         }
 
@@ -57,6 +69,18 @@ namespace ConsoleApp
             };
 
             var newEntity = _repoPerson.Create(dummy);
+        }
+
+        private static void CreateTestClient()
+        {
+            var dummy = new Client
+            {
+                Name = "Harmony Granger",
+                DateOfBirth = new DateTime(1994, 2, 16),
+                PhoneNumber = "555-567890"
+            };
+
+            var newEntity = _repoClient.Create(dummy);
         }
     }
 }
