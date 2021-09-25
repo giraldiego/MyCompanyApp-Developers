@@ -9,8 +9,7 @@ namespace ConsoleApp
         private static IRepoPerson _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
         private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
-
-
+        private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
 
         static void Main(string[] args)
         {
@@ -53,6 +52,16 @@ namespace ConsoleApp
 
             Console.WriteLine("\nTests completed");
 
+            var dummyCompany = (Company)CreateTestCompany();
+            Console.WriteLine("Test Company created!");
+
+            Console.WriteLine(_repoCompany.Delete(99));
+
+            Console.WriteLine(_repoCompany.List());
+
+            Console.WriteLine(_repoCompany.Detail(dummyCompany.CompanyId).Name);
+
+            Console.WriteLine("\nTests completed");
         }
 
         private static Object CreateTestManager()
@@ -93,6 +102,18 @@ namespace ConsoleApp
             };
 
             var newEntity = _repoClient.Create(dummy);
+            return newEntity;
+        }
+
+        private static Object CreateTestCompany()
+        {
+            var dummy = new Company
+            {
+                Name = "ACME",
+                Address = "BH 90210"
+            };
+
+            var newEntity = _repoCompany.Create(dummy);
             return newEntity;
         }
     }
