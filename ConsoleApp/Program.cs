@@ -9,6 +9,7 @@ namespace ConsoleApp
         private static IRepoPerson _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
         private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
+        private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
         private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
 
         static void Main(string[] args)
@@ -41,6 +42,7 @@ namespace ConsoleApp
 
             Console.WriteLine("\nTesting Client CRUD");
 
+
             var dummyClient = (Client)CreateTestClient();
             Console.WriteLine("Test Client created!");
 
@@ -51,6 +53,19 @@ namespace ConsoleApp
             Console.WriteLine(_repoClient.Detail(dummyClient.PersonId).Name);
 
             Console.WriteLine("\nTests completed");
+
+
+            var dummyEmployee = (Employee)CreateTestEmployee();
+            Console.WriteLine("Test Employee created!");
+
+            Console.WriteLine(_repoEmployee.Delete(99));
+
+            Console.WriteLine(_repoEmployee.List());
+
+            Console.WriteLine(_repoEmployee.Detail(dummyEmployee.PersonId).Name);
+
+            Console.WriteLine("\nTests completed");
+
 
             var dummyCompany = (Company)CreateTestCompany();
             Console.WriteLine("Test Company created!");
@@ -105,6 +120,19 @@ namespace ConsoleApp
             return newEntity;
         }
 
+        private static Object CreateTestEmployee()
+        {
+            var dummy = new Employee
+            {
+                Name = "Ron Weasly",
+                DateOfBirth = new DateTime(1994, 3, 13),
+                Salary = 2000000,
+                Manager = null,
+            };
+
+            var newEntity = _repoEmployee.Create(dummy);
+            return newEntity;
+        }
         private static Object CreateTestCompany()
         {
             var dummy = new Company
