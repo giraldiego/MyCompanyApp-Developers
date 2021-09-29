@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ngqThGGiij1EkmUxFSFcBTT9WeujLrUY8zXRG6XF3/qHTJoy5HFspTF0gCmdf+03ErgAZR/+Xjedsr6CXk/9wQ==",
+  "dgSpecHash": "LLo3CL7NdjSjvXDlgv8h0y/B2vSjqrnKM0m9Ifm21d3i8qCeMSV83Rbb67GfeU2OBesMtlCHzDFX0K3zar+K7g==",
   "success": true,
   "projectFilePath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,9 @@
     "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "/home/giraldiego/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
