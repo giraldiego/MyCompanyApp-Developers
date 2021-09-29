@@ -1,0 +1,21 @@
+﻿@page
+@model FrontEnd.Pages.Managers.DetailModel
+@{
+}
+<h2>@Model.Entity.Name</h2>
+<div>
+    Id: @Model.Entity.PersonId
+</div>
+<div>
+    Date of Birth: @Model.Entity.DateOfBirth
+</div>
+<div>
+    Salary: @Model.Entity.Salary
+</div>
+<div>
+    Manager: @Model.Entity.Manager
+</div>
+<div>
+    Category: @Model.Entity.Category
+</div>
+<a asp-page="./List" class="btn-default">Back to List</a>
