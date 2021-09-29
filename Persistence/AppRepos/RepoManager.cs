@@ -4,7 +4,7 @@ using Domain;
 
 namespace Persistence
 {
-    public class RepoManager : IRepoPerson
+    public class RepoManager : IRepoManager
     {
 
         private readonly AppDbContext _appDbContext;
@@ -14,19 +14,19 @@ namespace Persistence
             _appDbContext = appDbContext;
         }
 
-        public Person Create(Person manager)
+        public Manager Create(Manager manager)
         {
             var addedEntity = _appDbContext.Managers.Add((Manager)manager);
             _appDbContext.SaveChanges();
             return addedEntity.Entity;
         }
 
-        public IEnumerable<Person> List()
+        public IEnumerable<Manager> List()
         {
             return _appDbContext.Managers;
         }
 
-        public Person Detail(int pk)
+        public Manager Detail(int pk)
         {
             return _appDbContext.Managers.FirstOrDefault(p => p.PersonId == pk);
         }
@@ -41,7 +41,7 @@ namespace Persistence
             return true;
         }
 
-        public Person Update(Person manager)
+        public Manager Update(Manager manager)
         {
             Manager newManager = (Manager)manager;
             var entityFound = _appDbContext.Managers.FirstOrDefault(p => p.PersonId == newManager.PersonId);

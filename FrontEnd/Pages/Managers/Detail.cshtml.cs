@@ -11,7 +11,7 @@ namespace FrontEnd.Pages.Managers
 {
     public class DetailModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoManager repoEntity;
         public Manager Entity { get; set; }  // Change entity type to match class
 
         public DetailModel()

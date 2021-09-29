@@ -12,14 +12,14 @@ namespace FrontEnd.Pages.Managers
 
     public class ListModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoManager repoEntity;
 
         public ListModel()
         {
             this.repoEntity = new RepoManager(new AppDbContext());   // Repo type to match class
         }
 
-        public IEnumerable<Person> Entities { get; set; }   // Change entity type to match class
+        public IEnumerable<Manager> Entities { get; set; }   // Change entity type to match class
 
         public void OnGet()
         {
