@@ -1,0 +1,29 @@
+﻿@page
+@model FrontEnd.ListPersonsModel
+@{
+}
+<h1>Lista de Personas</h1>
+
+<table class="table">
+
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Date of Birth</td>
+            <td>Detail</td>
+        </tr>
+
+    @foreach (var person in Model.Persons)
+    {
+        <tr>
+            <td>@person.PersonId</td>
+            <td>@person.Name</td>
+            <td>@person.DateOfBirth</td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./Detail" asp-route-saludoId="@person.PersonId">
+                    Detalle
+                </a>
+            </td>
+        </tr>
+    }
+</table>
