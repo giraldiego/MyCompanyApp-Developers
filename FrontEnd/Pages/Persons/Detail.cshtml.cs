@@ -9,19 +9,19 @@ using Domain;
 
 namespace FrontEnd
 {
-    public class DetailPersonModel : PageModel
+    public class DetailModel : PageModel
     {
-        private readonly IRepoPerson repoPerson;
+        private readonly IRepoPerson repoEntity;
         public Person Entity { get; set; }
 
-        public DetailPersonModel()
+        public DetailModel()
         {
-            this.repoPerson = new RepoPerson(new AppDbContext());
+            this.repoEntity = new RepoPerson(new AppDbContext());
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = repoPerson.Detail(pk);
+            Entity = repoEntity.Detail(pk);
             if(Entity == null)
             {
                 return RedirectToPage("./NotFound");

@@ -10,20 +10,20 @@ using Persistence;
 namespace FrontEnd
 {
 
-    public class ListPersonsModel : PageModel
+    public class ListModel : PageModel
     {
-        private readonly IRepoPerson repoPerson;
+        private readonly IRepoPerson repoEntity;
 
-        public ListPersonsModel()
+        public ListModel()
         {
-            this.repoPerson = new RepoPerson(new AppDbContext());
+            this.repoEntity = new RepoPerson(new AppDbContext());
         }
 
-        public IEnumerable<Person> Persons { get; set; }
+        public IEnumerable<Person> Entities { get; set; }
 
         public void OnGet()
         {
-            Persons = repoPerson.List();
+            Entities = repoEntity.List();
         }
     }
 }
