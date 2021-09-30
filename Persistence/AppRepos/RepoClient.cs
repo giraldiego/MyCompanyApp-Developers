@@ -28,7 +28,7 @@ namespace Persistence
         public IEnumerable<Person> List()
         {
             // Change to class name
-            return _appDbContext.Managers;
+            return _appDbContext.Clients;
         }
 
         public Person Detail(int pk)
