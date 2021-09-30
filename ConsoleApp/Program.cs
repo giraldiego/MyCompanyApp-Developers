@@ -19,16 +19,19 @@ namespace ConsoleApp
             Console.WriteLine("Hello Entity Framework!");
             Console.WriteLine();
 
-            TestRepoManager();
+            TestRepoManager(TestCreateManager);
 
-            TestRepoClient();
+            TestRepoClient(TestCreateClient);
 
         }
 
-        static private bool TestRepoManager()
+
+
+        static private bool TestRepoManager(Func<Manager> creator)
         {
 
             string testingEntity = "Manager";
+            IRepoManager repo = _repoManager;
 
             Console.WriteLine("Testing CRUD for " + testingEntity);
             Console.WriteLine();
@@ -38,7 +41,7 @@ namespace ConsoleApp
 
             Console.WriteLine("List of current " + testingEntity + "s:");
 
-            foreach (Manager entity in _repoManager.List())
+            foreach (Manager entity in repo.List())
             {
                 Console.WriteLine(entity.PersonId + " - " + entity.Name);
             }
@@ -47,19 +50,19 @@ namespace ConsoleApp
             Console.WriteLine("Testing Create() for " + testingEntity);
             Console.WriteLine();
 
-            var dummyEntity = (Manager)TestCreateManager();
+            Manager dummyEntity = creator();
 
             Console.WriteLine("Test " + testingEntity + " created!");
             Console.WriteLine();
 
             Console.WriteLine("Testing Read() for " + testingEntity);
 
-            Console.WriteLine("Name of the las entity created: " + _repoManager.Detail(dummyEntity.PersonId).Name);
+            Console.WriteLine("Name of the las entity created: " + repo.Detail(dummyEntity.PersonId).Name);
             Console.WriteLine();
 
             Console.WriteLine("New list of " + testingEntity + "s:");
 
-            foreach (Manager entity in _repoManager.List())
+            foreach (Manager entity in repo.List())
             {
                 Console.WriteLine(entity.PersonId + " - " + entity.Name);
             }
@@ -67,7 +70,7 @@ namespace ConsoleApp
 
             Console.WriteLine("Trying to Delete the last " + testingEntity + " created");
 
-            if (_repoManager.Delete(dummyEntity.PersonId))
+            if (repo.Delete(dummyEntity.PersonId))
             {
                 Console.WriteLine("Deletion successful!");
             } else
@@ -78,7 +81,7 @@ namespace ConsoleApp
 
             Console.WriteLine("List of " + testingEntity + " after deletion:");
 
-            foreach (Manager entity in _repoManager.List())
+            foreach (Manager entity in repo.List())
             {
                 Console.WriteLine(entity.PersonId + " - " + entity.Name);
             }
@@ -90,7 +93,7 @@ namespace ConsoleApp
             return true;
         }
 
-        static private bool TestRepoClient()
+        static private bool TestRepoClient(Func<Client> creator)
         {
 
             string testingEntity = "Client";
@@ -113,7 +116,7 @@ namespace ConsoleApp
             Console.WriteLine("Testing Create() for " + testingEntity);
             Console.WriteLine();
 
-            Client dummyEntity = TestCreateClient();
+            Client dummyEntity = creator();
 
             Console.WriteLine("Test " + testingEntity + " created!");
             Console.WriteLine();
@@ -156,7 +159,7 @@ namespace ConsoleApp
             return true;
         }
 
-        private static Object TestCreateManager()
+        private static Manager TestCreateManager()
         {
             var dummy = new Manager
             {
@@ -175,7 +178,7 @@ namespace ConsoleApp
         {
             var dummy = new Client
             {
-                Name = "Hanna Montana",
+                Name = "Hanna",
                 DateOfBirth = new DateTime(1994, 2, 16),
                 PhoneNumber = "555-567890"
             };
