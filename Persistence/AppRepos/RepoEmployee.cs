@@ -5,7 +5,7 @@ using Domain;
 namespace Persistence
 {
     // Change to class name
-    public class RepoEmployee : IRepoPerson
+    public class RepoEmployee : IRepoEmployee
     {
 
         private readonly AppDbContext _appDbContext;
@@ -17,7 +17,7 @@ namespace Persistence
         }
 
         // Change to class name
-        public Person Create(Person employee)
+        public Employee Create(Employee employee)
         {
             // Change to class name
             var addedEntity = _appDbContext.Employees.Add((Employee)employee);
@@ -25,13 +25,13 @@ namespace Persistence
             return addedEntity.Entity;
         }
 
-        public IEnumerable<Person> List()
+        public IEnumerable<Employee> List()
         {
             // Change to class name
             return _appDbContext.Employees;
         }
 
-        public Person Detail(int pk)
+        public Employee Detail(int pk)
         {
             // Change to class name
             return _appDbContext.Employees.FirstOrDefault(p => p.PersonId == pk);
@@ -49,19 +49,17 @@ namespace Persistence
         }
 
         // Change to class name
-        public Person Update(Person employee)
+        public Employee Update(Employee employee)
         {
             // Change to class name
-            Employee newEmployee = (Employee)employee;
-            // Change to class name
-            var entityFound = _appDbContext.Employees.FirstOrDefault(p => p.PersonId == newEmployee.PersonId);
+            var entityFound = _appDbContext.Employees.FirstOrDefault(p => p.PersonId == employee.PersonId);
             if (entityFound == null)
                 return null;
 
-            entityFound.Name = newEmployee.Name;
-            entityFound.DateOfBirth = newEmployee.DateOfBirth;
-            entityFound.Salary = newEmployee.Salary;
-            entityFound.Manager = newEmployee.Manager;
+            entityFound.Name = employee.Name;
+            entityFound.DateOfBirth = employee.DateOfBirth;
+            entityFound.Salary = employee.Salary;
+            entityFound.Manager = employee.Manager;
             _appDbContext.SaveChanges();
             return entityFound;
         }

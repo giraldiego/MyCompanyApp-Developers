@@ -1,0 +1,26 @@
+﻿@page
+@model FrontEnd.Pages.Employees.ListModel
+@{
+}
+<h1>List of Employees</h1>
+
+<table class="table">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Action</td>
+        </tr>
+
+    @foreach (var entity in Model.Entities)
+    {
+        <tr>
+            <td>@entity.PersonId</td>
+            <td>@entity.Name</td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./Detail" asp-route-pk="@entity.PersonId">
+                    Detail
+                </a>
+            </td>
+        </tr>
+    }
+</table>
