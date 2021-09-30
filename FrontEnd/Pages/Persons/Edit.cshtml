@@ -4,6 +4,7 @@
 }
 <h2>Edit: @Model.Entity.Name</h2>
 <form method="POST" action="">
+    <input type="hidden" asp-for="Entity.PersonId">
     <div class="form-group">
         <label asp-for="Entity.Name"></label>
         <input asp-for="Entity.Name" class="form-control">

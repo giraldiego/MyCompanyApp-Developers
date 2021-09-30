@@ -12,6 +12,8 @@ namespace FrontEnd
     public class EditModel : PageModel
     {
         private readonly IRepoPerson repoEntity;
+
+        [BindProperty]
         public Person Entity { get; set; }
 
         public EditModel()
@@ -31,6 +33,12 @@ namespace FrontEnd
                 return Page();
             }
 
+        }
+
+        public IActionResult OnPost()
+        {
+            Entity = repoEntity.Update(Entity);
+            return Page();
         }
     }
 }
