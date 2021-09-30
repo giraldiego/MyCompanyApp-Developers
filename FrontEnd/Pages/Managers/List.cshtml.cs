@@ -24,6 +24,10 @@ namespace FrontEnd.Pages.Managers
         public void OnGet()
         {
             Entities = repoEntity.List();   // Explicity convert to entity type to match class
+            foreach (Manager entity in Entities)
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
         }
     }
 }
