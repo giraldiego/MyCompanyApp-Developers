@@ -8,15 +8,25 @@ namespace ConsoleApp
     class Program
     {
         private static IRepoManager _repoManager = new RepoManager(new AppDbContext());
-        private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
-        // private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
-        private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
-        private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
+        private static IRepoClient _repoClient = new RepoClient(new AppDbContext());
+
+        // private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
+        // private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
+        // private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Entity Framework!");
             Console.WriteLine();
+
+            TestRepoManager();
+
+            TestRepoClient();
+
+        }
+
+        static private bool TestRepoManager()
+        {
 
             string testingEntity = "Manager";
 
@@ -37,7 +47,7 @@ namespace ConsoleApp
             Console.WriteLine("Testing Create() for " + testingEntity);
             Console.WriteLine();
 
-            var dummyEntity = (Manager)CreateTestManager();
+            var dummyEntity = (Manager)TestCreateManager();
 
             Console.WriteLine("Test " + testingEntity + " created!");
             Console.WriteLine();
@@ -66,7 +76,7 @@ namespace ConsoleApp
             }
             Console.WriteLine();
 
-            Console.WriteLine("List of Managers after deletion:");
+            Console.WriteLine("List of " + testingEntity + " after deletion:");
 
             foreach (Manager entity in _repoManager.List())
             {
@@ -77,61 +87,80 @@ namespace ConsoleApp
             Console.WriteLine("All test passed for " + testingEntity);
             Console.WriteLine();
 
-            // Console.WriteLine("\nTesting Person CRUD");
-
-            // var dummyPerson = (Person)CreateTestPerson();
-            // Console.WriteLine("Test Person created!");
-
-            // Console.WriteLine(_repoPerson.Delete(99));
-
-            // Console.WriteLine(_repoPerson.List());
-
-            // Console.WriteLine(_repoPerson.Detail(dummyPerson.PersonId).Name);
-
-            // Console.WriteLine("\nTesting Client CRUD");
-
-
-            // var dummyClient = (Client)CreateTestClient();
-            // Console.WriteLine("Test Client created!");
-
-            // Console.WriteLine(_repoClient.Delete(99));
-
-            // Console.WriteLine(_repoClient.List());
-
-            // Console.WriteLine(_repoClient.Detail(dummyClient.PersonId).Name);
-
-            // Console.WriteLine("\nTests completed");
-
-
-            // var dummyEmployee = (Employee)CreateTestEmployee();
-            // Console.WriteLine("Test Employee created!");
-
-            // Console.WriteLine(_repoEmployee.Delete(99));
-
-            // Console.WriteLine(_repoEmployee.List());
-
-            // Console.WriteLine(_repoEmployee.Detail(dummyEmployee.PersonId).Name);
-
-            // Console.WriteLine("\nTests completed");
-
-
-            // var dummyCompany = (Company)CreateTestCompany();
-            // Console.WriteLine("Test Company created!");
-
-            // Console.WriteLine(_repoCompany.Delete(99));
-
-            // Console.WriteLine(_repoCompany.List());
-
-            // Console.WriteLine(_repoCompany.Detail(dummyCompany.CompanyId).Name);
-
-            // Console.WriteLine("\nTests completed");
+            return true;
         }
 
-        private static Object CreateTestManager()
+        static private bool TestRepoClient()
+        {
+
+            string testingEntity = "Client";
+            IRepoClient repo = _repoClient;
+
+            Console.WriteLine("Testing CRUD for " + testingEntity);
+            Console.WriteLine();
+
+            Console.WriteLine("Testing List() for " + testingEntity);
+            Console.WriteLine();
+
+            Console.WriteLine("List of current " + testingEntity + "s:");
+
+            foreach (Client entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Testing Create() for " + testingEntity);
+            Console.WriteLine();
+
+            Client dummyEntity = TestCreateClient();
+
+            Console.WriteLine("Test " + testingEntity + " created!");
+            Console.WriteLine();
+
+            Console.WriteLine("Testing Read() for " + testingEntity);
+
+            Console.WriteLine("Name of the las entity created: " + repo.Detail(dummyEntity.PersonId).Name);
+            Console.WriteLine();
+
+            Console.WriteLine("New list of " + testingEntity + "s:");
+
+            foreach (Client entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Trying to Delete the last " + testingEntity + " created");
+
+            if (repo.Delete(dummyEntity.PersonId))
+            {
+                Console.WriteLine("Deletion successful!");
+            } else
+            {
+                Console.WriteLine("Deletion failed!");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("List of " + testingEntity + " after deletion:");
+
+            foreach (Client entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("All test passed for " + testingEntity);
+            Console.WriteLine();
+
+            return true;
+        }
+
+        private static Object TestCreateManager()
         {
             var dummy = new Manager
             {
-                Name = "Kevin Raziel",
+                Name = "Bill Gates",
                 DateOfBirth = new DateTime(1992, 1, 9),
                 Salary = 5000000,
                 Manager = null,
@@ -142,55 +171,55 @@ namespace ConsoleApp
             return newEntity;
         }
 
-
-        private static Object CreateTestPerson()
+        private static Client TestCreateClient()
         {
-            var dummy = new Person
+            var dummy = new Client
             {
-                Name = "Clark Kent",
-                DateOfBirth = new DateTime(1956, 6, 30),
+                Name = "Hanna Montana",
+                DateOfBirth = new DateTime(1994, 2, 16),
+                PhoneNumber = "555-567890"
             };
 
-            var newEntity = _repoPerson.Create(dummy);
+            var newEntity = _repoClient.Create(dummy);
             return newEntity;
         }
 
-        // private static Object CreateTestClient()
+        // private static Object CreateTestPerson()
         // {
-        //     var dummy = new Client
+        //     var dummy = new Person
         //     {
-        //         Name = "Harmony Granger",
-        //         DateOfBirth = new DateTime(1994, 2, 16),
-        //         PhoneNumber = "555-567890"
+        //         Name = "Clark Kent",
+        //         DateOfBirth = new DateTime(1956, 6, 30),
         //     };
 
-        //     var newEntity = _repoClient.Create(dummy);
+        //     var newEntity = _repoPerson.Create(dummy);
         //     return newEntity;
         // }
 
-        private static Object CreateTestEmployee()
-        {
-            var dummy = new Employee
-            {
-                Name = "Ron Weasly",
-                DateOfBirth = new DateTime(1994, 3, 13),
-                Salary = 2000000,
-                Manager = null,
-            };
 
-            var newEntity = _repoEmployee.Create(dummy);
-            return newEntity;
-        }
-        private static Object CreateTestCompany()
-        {
-            var dummy = new Company
-            {
-                Name = "ACME",
-                Address = "BH 90210"
-            };
+        // private static Object CreateTestEmployee()
+        // {
+        //     var dummy = new Employee
+        //     {
+        //         Name = "Ron Weasly",
+        //         DateOfBirth = new DateTime(1994, 3, 13),
+        //         Salary = 2000000,
+        //         Manager = null,
+        //     };
 
-            var newEntity = _repoCompany.Create(dummy);
-            return newEntity;
-        }
+        //     var newEntity = _repoEmployee.Create(dummy);
+        //     return newEntity;
+        // }
+        // private static Object CreateTestCompany()
+        // {
+        //     var dummy = new Company
+        //     {
+        //         Name = "ACME",
+        //         Address = "BH 90210"
+        //     };
+
+        //     var newEntity = _repoCompany.Create(dummy);
+        //     return newEntity;
+        // }
     }
 }
