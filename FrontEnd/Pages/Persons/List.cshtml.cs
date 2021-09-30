@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Persistence;
 
-namespace FrontEnd
+namespace FrontEnd.Pages.Persons
 {
 
     public class ListModel : PageModel

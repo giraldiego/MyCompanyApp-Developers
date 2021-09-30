@@ -6,7 +6,7 @@ namespace ConsoleApp
 {
     class Program
     {
-        private static IRepoPerson _repoManager = new RepoManager(new AppDbContext());
+        private static IRepoManager _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
         private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
         private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
@@ -22,61 +22,67 @@ namespace ConsoleApp
 
             Console.WriteLine("Test Manager created!");
 
-            Console.WriteLine(_repoManager.List());
-
-            Console.WriteLine(_repoManager.Delete(99));
-
-            Console.WriteLine(_repoManager.Detail(dummyManager.PersonId).Name);
-
-
-            Console.WriteLine("\nTesting Person CRUD");
-
-            var dummyPerson = (Person)CreateTestPerson();
-            Console.WriteLine("Test Person created!");
-
-            Console.WriteLine(_repoPerson.Delete(99));
-
-            Console.WriteLine(_repoPerson.List());
-
-            Console.WriteLine(_repoPerson.Detail(dummyPerson.PersonId).Name);
-
-            Console.WriteLine("\nTesting Client CRUD");
+            foreach (Manager entity in _repoManager.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
 
 
-            var dummyClient = (Client)CreateTestClient();
-            Console.WriteLine("Test Client created!");
-
-            Console.WriteLine(_repoClient.Delete(99));
-
-            Console.WriteLine(_repoClient.List());
-
-            Console.WriteLine(_repoClient.Detail(dummyClient.PersonId).Name);
-
-            Console.WriteLine("\nTests completed");
 
 
-            var dummyEmployee = (Employee)CreateTestEmployee();
-            Console.WriteLine("Test Employee created!");
+            // Console.WriteLine(_repoManager.Delete(99));
 
-            Console.WriteLine(_repoEmployee.Delete(99));
-
-            Console.WriteLine(_repoEmployee.List());
-
-            Console.WriteLine(_repoEmployee.Detail(dummyEmployee.PersonId).Name);
-
-            Console.WriteLine("\nTests completed");
+            // Console.WriteLine(_repoManager.Detail(dummyManager.PersonId).Name);
 
 
-            var dummyCompany = (Company)CreateTestCompany();
-            Console.WriteLine("Test Company created!");
+            // Console.WriteLine("\nTesting Person CRUD");
 
-            Console.WriteLine(_repoCompany.Delete(99));
+            // var dummyPerson = (Person)CreateTestPerson();
+            // Console.WriteLine("Test Person created!");
 
-            Console.WriteLine(_repoCompany.List());
+            // Console.WriteLine(_repoPerson.Delete(99));
 
-            Console.WriteLine(_repoCompany.Detail(dummyCompany.CompanyId).Name);
+            // Console.WriteLine(_repoPerson.List());
 
-            Console.WriteLine("\nTests completed");
+            // Console.WriteLine(_repoPerson.Detail(dummyPerson.PersonId).Name);
+
+            // Console.WriteLine("\nTesting Client CRUD");
+
+
+            // var dummyClient = (Client)CreateTestClient();
+            // Console.WriteLine("Test Client created!");
+
+            // Console.WriteLine(_repoClient.Delete(99));
+
+            // Console.WriteLine(_repoClient.List());
+
+            // Console.WriteLine(_repoClient.Detail(dummyClient.PersonId).Name);
+
+            // Console.WriteLine("\nTests completed");
+
+
+            // var dummyEmployee = (Employee)CreateTestEmployee();
+            // Console.WriteLine("Test Employee created!");
+
+            // Console.WriteLine(_repoEmployee.Delete(99));
+
+            // Console.WriteLine(_repoEmployee.List());
+
+            // Console.WriteLine(_repoEmployee.Detail(dummyEmployee.PersonId).Name);
+
+            // Console.WriteLine("\nTests completed");
+
+
+            // var dummyCompany = (Company)CreateTestCompany();
+            // Console.WriteLine("Test Company created!");
+
+            // Console.WriteLine(_repoCompany.Delete(99));
+
+            // Console.WriteLine(_repoCompany.List());
+
+            // Console.WriteLine(_repoCompany.Detail(dummyCompany.CompanyId).Name);
+
+            // Console.WriteLine("\nTests completed");
         }
 
         private static Object CreateTestManager()
