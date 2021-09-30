@@ -1,0 +1,12 @@
+﻿@page
+@model FrontEnd.DetailModel
+@{
+}
+<h2>@Model.Entity.Name</h2>
+<div>
+    Id: @Model.Entity.PersonId
+</div>
+<div>
+    Date of Birth: @Model.Entity.DateOfBirth
+</div>
+<a asp-page="./List" class="btn-default">Back to List</a>

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6FodMwip2BabjOBN+oSTzz5RyONVb7QdVq/KMo0HBfGXCiSav1TxVPhqK80qXOZAQzOSaiuqaoqM5yKrKLyeTQ==",
+  "dgSpecHash": "U+FJYHP9MqiFKLD1zlIrRG5JvE65e9Zoth0S+M+V8ex+gQYM468zgb/mpBqJcU52Q2xjcfzoxsi8xIfsDmbUcg==",
   "success": true,
   "projectFilePath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
