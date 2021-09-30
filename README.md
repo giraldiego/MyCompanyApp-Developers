@@ -49,18 +49,24 @@ Para mi caso, el servidor corre en el localhost con las credenciales del SA most
 
 Para windows, usualmente será el siguiente string:
 
-`@"Data Source=localhost\sqlexpress;Initial Catalog = MyCompanyAppDB;Integrated Security = True";`
+`@"Data Source=localhost\sqlexpress;Initial Catalog = MyCompanyAppDB;Integrated Security = True"`
 
 6. Asegures de compilar los proyectos de la solución:
 
 `dotnet build`
 
-7. Genere las migraciones a la base de datos:
+7. Genere las migraciones a la base de datos y verifique que se haya creado la BD usando el Azure Data manager por ejemplo:
 
 `dotnet ef database update --startup-project ..\ConsoleApp`
 
 Nota: Si esta en Linux, usar `../ConsoleApp` 
 
-8. Correr la aplicación desde la carpeta `ConsoleApp`
+8. Correr la aplicación de pruebas desde la carpeta `ConsoleApp`
 
 `dotnet run`
+
+9. Verificar que se hayan creado algunas entidades en la base de datos usando el Azure Data Manager por ejemplo.
+10. Correr la webapp desde la carpeta `FrontEnd`
+
+`dotnet run`
+11. Enjoy!
