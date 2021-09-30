@@ -5,7 +5,7 @@ using Domain;
 namespace Persistence
 {
     // Change to class name
-    public class RepoClient : IRepoPerson
+    public class RepoClient : IRepoClient
     {
 
         private readonly AppDbContext _appDbContext;
@@ -17,7 +17,7 @@ namespace Persistence
         }
 
         // Change to class name
-        public Person Create(Person client)
+        public Client Create(Client client)
         {
             // Change to class name
             var addedEntity = _appDbContext.Clients.Add((Client)client);
@@ -25,13 +25,13 @@ namespace Persistence
             return addedEntity.Entity;
         }
 
-        public IEnumerable<Person> List()
+        public IEnumerable<Client> List()
         {
             // Change to class name
             return _appDbContext.Clients;
         }
 
-        public Person Detail(int pk)
+        public Client Detail(int pk)
         {
             // Change to class name
             return _appDbContext.Clients.FirstOrDefault(p => p.PersonId == pk);
@@ -49,18 +49,16 @@ namespace Persistence
         }
 
         // Change to class name
-        public Person Update(Person client)
+        public Client Update(Client client)
         {
             // Change to class name
-            Client newClient = (Client)client;
-            // Change to class name
-            var entityFound = _appDbContext.Clients.FirstOrDefault(p => p.PersonId == newClient.PersonId);
+            var entityFound = _appDbContext.Clients.FirstOrDefault(p => p.PersonId == client.PersonId);
             if (entityFound == null)
                 return null;
 
-            entityFound.Name = newClient.Name;
-            entityFound.DateOfBirth = newClient.DateOfBirth;
-            entityFound.PhoneNumber = newClient.PhoneNumber;
+            entityFound.Name = client.Name;
+            entityFound.DateOfBirth = client.DateOfBirth;
+            entityFound.PhoneNumber = client.PhoneNumber;
             _appDbContext.SaveChanges();
             return entityFound;
         }
