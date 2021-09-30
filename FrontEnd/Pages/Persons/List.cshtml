@@ -9,7 +9,6 @@
             <th>Id</th>
             <th>Name</th>
             @* <th>Type</th> *@
-            <th>Action</th>
         </tr>
 
     @foreach (var entity in Model.Entities)
@@ -21,6 +20,11 @@
             <td>
                 <a class="btn btn-primary table-btn" asp-page="./Detail" asp-route-pk="@entity.PersonId">
                     Detail
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./Edit" asp-route-pk="@entity.PersonId">
+                    Edit
                 </a>
             </td>
         </tr>
