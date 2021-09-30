@@ -9,9 +9,9 @@ namespace ConsoleApp
     {
         private static IRepoManager _repoManager = new RepoManager(new AppDbContext());
         private static IRepoClient _repoClient = new RepoClient(new AppDbContext());
+        private static IRepoEmployee _repoEmployee = new RepoEmployee(new AppDbContext());
 
         // private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
-        // private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
         // private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
 
         static void Main(string[] args)
@@ -22,6 +22,8 @@ namespace ConsoleApp
             TestRepoManager(TestCreateManager);
 
             TestRepoClient(TestCreateClient);
+
+            TestRepoEmployee(TestCreateEmployee);
 
         }
 
@@ -159,6 +161,72 @@ namespace ConsoleApp
             return true;
         }
 
+      static private bool TestRepoEmployee(Func<Employee> creator)
+        {
+
+            string testingEntity = "Employee";
+            IRepoEmployee repo = _repoEmployee;
+
+            Console.WriteLine("Testing CRUD for " + testingEntity);
+            Console.WriteLine();
+
+            Console.WriteLine("Testing List() for " + testingEntity);
+            Console.WriteLine();
+
+            Console.WriteLine("List of current " + testingEntity + "s:");
+
+            foreach (var entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Testing Create() for " + testingEntity);
+            Console.WriteLine();
+
+            Employee dummyEntity = creator();
+
+            Console.WriteLine("Test " + testingEntity + " created!");
+            Console.WriteLine();
+
+            Console.WriteLine("Testing Read() for " + testingEntity);
+
+            Console.WriteLine("Name of the las entity created: " + repo.Detail(dummyEntity.PersonId).Name);
+            Console.WriteLine();
+
+            Console.WriteLine("New list of " + testingEntity + "s:");
+
+            foreach (var entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Trying to Delete the last " + testingEntity + " created");
+
+            if (repo.Delete(dummyEntity.PersonId))
+            {
+                Console.WriteLine("Deletion successful!");
+            } else
+            {
+                Console.WriteLine("Deletion failed!");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("List of " + testingEntity + " after deletion:");
+
+            foreach (var entity in repo.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("All test passed for " + testingEntity);
+            Console.WriteLine();
+
+            return true;
+        }
+
         private static Manager TestCreateManager()
         {
             var dummy = new Manager
@@ -187,6 +255,19 @@ namespace ConsoleApp
             return newEntity;
         }
 
+        private static Employee TestCreateEmployee()
+        {
+            var dummy = new Employee
+            {
+                Name = "Martin Mortimer",
+                DateOfBirth = new DateTime(1994, 3, 13),
+                Salary = 2000000,
+                Manager = null,
+            };
+            var newEntity = _repoEmployee.Create(dummy);
+            return newEntity;
+        }
+
         // private static Object CreateTestPerson()
         // {
         //     var dummy = new Person
@@ -200,19 +281,7 @@ namespace ConsoleApp
         // }
 
 
-        // private static Object CreateTestEmployee()
-        // {
-        //     var dummy = new Employee
-        //     {
-        //         Name = "Ron Weasly",
-        //         DateOfBirth = new DateTime(1994, 3, 13),
-        //         Salary = 2000000,
-        //         Manager = null,
-        //     };
 
-        //     var newEntity = _repoEmployee.Create(dummy);
-        //     return newEntity;
-        // }
         // private static Object CreateTestCompany()
         // {
         //     var dummy = new Company
