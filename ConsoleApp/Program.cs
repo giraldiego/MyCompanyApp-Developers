@@ -1,4 +1,5 @@
 ﻿﻿using System;
+using System.Collections.Generic;
 using Domain;
 using Persistence;
 
@@ -8,32 +9,73 @@ namespace ConsoleApp
     {
         private static IRepoManager _repoManager = new RepoManager(new AppDbContext());
         private static IRepoPerson _repoPerson = new RepoPerson(new AppDbContext());
-        private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
+        // private static IRepoPerson _repoClient = new RepoClient(new AppDbContext());
         private static IRepoPerson _repoEmployee = new RepoEmployee(new AppDbContext());
         private static IRepoCompany _repoCompany = new RepoCompany(new AppDbContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Entity Framework!");
+            Console.WriteLine();
 
-            Console.WriteLine("\nTesting Manager CRUD");
+            string testingEntity = "Manager";
 
-            var dummyManager = (Manager)CreateTestManager();
+            Console.WriteLine("Testing CRUD for " + testingEntity);
+            Console.WriteLine();
 
-            Console.WriteLine("Test Manager created!");
+            Console.WriteLine("Testing List() for " + testingEntity);
+            Console.WriteLine();
+
+            Console.WriteLine("List of current " + testingEntity + "s:");
 
             foreach (Manager entity in _repoManager.List())
             {
                 Console.WriteLine(entity.PersonId + " - " + entity.Name);
             }
+            Console.WriteLine();
 
+            Console.WriteLine("Testing Create() for " + testingEntity);
+            Console.WriteLine();
 
+            var dummyEntity = (Manager)CreateTestManager();
 
+            Console.WriteLine("Test " + testingEntity + " created!");
+            Console.WriteLine();
 
-            // Console.WriteLine(_repoManager.Delete(99));
+            Console.WriteLine("Testing Read() for " + testingEntity);
 
-            // Console.WriteLine(_repoManager.Detail(dummyManager.PersonId).Name);
+            Console.WriteLine("Name of the las entity created: " + _repoManager.Detail(dummyEntity.PersonId).Name);
+            Console.WriteLine();
 
+            Console.WriteLine("New list of " + testingEntity + "s:");
+
+            foreach (Manager entity in _repoManager.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Trying to Delete the last " + testingEntity + " created");
+
+            if (_repoManager.Delete(dummyEntity.PersonId))
+            {
+                Console.WriteLine("Deletion successful!");
+            } else
+            {
+                Console.WriteLine("Deletion failed!");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("List of Managers after deletion:");
+
+            foreach (Manager entity in _repoManager.List())
+            {
+                Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("All test passed for " + testingEntity);
+            Console.WriteLine();
 
             // Console.WriteLine("\nTesting Person CRUD");
 
@@ -113,18 +155,18 @@ namespace ConsoleApp
             return newEntity;
         }
 
-        private static Object CreateTestClient()
-        {
-            var dummy = new Client
-            {
-                Name = "Harmony Granger",
-                DateOfBirth = new DateTime(1994, 2, 16),
-                PhoneNumber = "555-567890"
-            };
+        // private static Object CreateTestClient()
+        // {
+        //     var dummy = new Client
+        //     {
+        //         Name = "Harmony Granger",
+        //         DateOfBirth = new DateTime(1994, 2, 16),
+        //         PhoneNumber = "555-567890"
+        //     };
 
-            var newEntity = _repoClient.Create(dummy);
-            return newEntity;
-        }
+        //     var newEntity = _repoClient.Create(dummy);
+        //     return newEntity;
+        // }
 
         private static Object CreateTestEmployee()
         {
