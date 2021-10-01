@@ -45,6 +45,11 @@ namespace FrontEnd
 
         public IActionResult OnPost()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             if (Entity.PersonId > 0)
             {
                 Entity = repoEntity.Update(Entity);
@@ -53,7 +58,7 @@ namespace FrontEnd
             {
                 repoEntity.Create(Entity);
             }
-            return Page();
+            return RedirectToPage("../Index");
         }
     }
 }

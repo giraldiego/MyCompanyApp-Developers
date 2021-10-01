@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "U+FJYHP9MqiFKLD1zlIrRG5JvE65e9Zoth0S+M+V8ex+gQYM468zgb/mpBqJcU52Q2xjcfzoxsi8xIfsDmbUcg==",
+  "dgSpecHash": "vdaU6+YgexOUiiQBpEkAK3GSDH/+PZ4RbTDjx/9FvT477J5ABqWAnZU/rdno7iLMnE+iF4gvKnt/7IL3d1o+Yg==",
   "success": true,
   "projectFilePath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj",
   "expectedPackageFiles": [
-    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+    "/home/giraldiego/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
