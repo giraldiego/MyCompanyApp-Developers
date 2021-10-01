@@ -21,10 +21,18 @@ namespace FrontEnd
             this.repoEntity = new RepoPerson(new AppDbContext());
         }
 
-        public IActionResult OnGet(int pk)
+        public IActionResult OnGet(int? pk)
         {
-            Entity = repoEntity.Detail(pk);
-            if(Entity == null)
+            if (pk.HasValue)
+            {
+                Entity = repoEntity.Detail(pk.Value);
+            }
+            else
+            {
+                Entity = new Person();
+            }
+
+            if (Entity == null)
             {
                 return RedirectToPage("./NotFound");
             }

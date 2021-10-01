@@ -2,31 +2,38 @@
 @model FrontEnd.Pages.Persons.ListModel
 @{
 }
+
 <h1>List of Persons</h1>
 
-<table class="table">
+<div>
+    <table class="table">
         <tr>
             <th>Id</th>
             <th>Name</th>
-            @* <th>Type</th> *@
+            <th>
+                <a class="btn btn-success" asp-page="./Edit">
+                    Add
+                </a>
+            </th>
         </tr>
 
-    @foreach (var entity in Model.Entities)
-    {
-        <tr>
-            <td>@entity.PersonId</td>
-            <td>@entity.Name</td>
-            @* <td>@entity.Discriminator</td> *@
-            <td>
-                <a class="btn btn-primary table-btn" asp-page="./Detail" asp-route-pk="@entity.PersonId">
-                    Detail
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-primary table-btn" asp-page="./Edit" asp-route-pk="@entity.PersonId">
-                    Edit
-                </a>
-            </td>
-        </tr>
-    }
-</table>
+        @foreach (var entity in Model.Entities)
+        {
+            <tr>
+                <td>@entity.PersonId</td>
+                <td>@entity.Name</td>
+                @* <td>@entity.Discriminator</td> *@
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Detail" asp-route-pk="@entity.PersonId">
+                        Detail
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Edit" asp-route-pk="@entity.PersonId">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
