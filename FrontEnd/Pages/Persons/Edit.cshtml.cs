@@ -45,7 +45,14 @@ namespace FrontEnd
 
         public IActionResult OnPost()
         {
-            Entity = repoEntity.Update(Entity);
+            if (Entity.PersonId > 0)
+            {
+                Entity = repoEntity.Update(Entity);
+            }
+            else
+            {
+                repoEntity.Create(Entity);
+            }
             return Page();
         }
     }
