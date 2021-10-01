@@ -66,7 +66,9 @@ Nota: Si esta en Linux, usar `../ConsoleApp`
 `dotnet run`
 
 9. Verificar que se hayan creado algunas entidades en la base de datos usando el Azure Data Manager por ejemplo.
+
 10. Correr la webapp desde la carpeta `FrontEnd`
 
 `dotnet run`
+
 11. Enjoy!
