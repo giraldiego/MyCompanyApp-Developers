@@ -58,7 +58,7 @@ namespace FrontEnd
             {
                 repoEntity.Create(Entity);
             }
-            return RedirectToPage("../Index");
+            return RedirectToPage("./List");
         }
     }
 }
