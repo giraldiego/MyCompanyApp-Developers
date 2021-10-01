@@ -51,6 +51,10 @@ Para windows, usualmente será el siguiente string:
 
 `@"Data Source=localhost\sqlexpress;Initial Catalog = MyCompanyAppDB;Integrated Security = True"`
 
+5.1. Instalar el siguiente paquete en la capa Domain:
+
+`dotnet add package System.ComponentModel.DataAnnotations`
+
 6. Asegures de compilar los proyectos de la solución:
 
 `dotnet build`
