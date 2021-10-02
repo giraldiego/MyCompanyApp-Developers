@@ -14,9 +14,9 @@ namespace FrontEnd.Pages.Persons
     {
         private readonly IRepoPerson repoEntity;
 
-        public ListModel()
+        public ListModel(IRepoPerson repoEntity)
         {
-            this.repoEntity = new RepoPerson(new AppDbContext());
+            this.repoEntity = repoEntity;
         }
 
         public IEnumerable<Person> Entities { get; set; }
