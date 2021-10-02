@@ -24,10 +24,10 @@ namespace FrontEnd.Pages.Clients
         public void OnGet()
         {
             Entities = _repoEntity.List();
-            foreach (Client entity in Entities)
-            {
-                Console.WriteLine(entity.PersonId + " - " + entity.Name);
-            }
+            // foreach (Client entity in Entities)
+            // {
+            //     Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            // }
         }
     }
 }
