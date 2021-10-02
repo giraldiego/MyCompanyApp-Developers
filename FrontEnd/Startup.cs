@@ -27,6 +27,7 @@ namespace FrontEnd
             services.AddRazorPages();
             services.AddDbContext<AppDbContext>();
             services.AddScoped<IRepoPerson, RepoPerson>();
+            services.AddScoped<IRepoClient, RepoClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

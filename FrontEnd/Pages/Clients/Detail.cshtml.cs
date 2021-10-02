@@ -11,17 +11,17 @@ namespace FrontEnd.Pages.Clients
 {
     public class DetailModel : PageModel
     {
-        private readonly IRepoClient repoEntity;
+        private readonly IRepoClient _repoEntity;
         public Client Entity { get; set; }  // Change entity type to match class
 
-        public DetailModel()
+        public DetailModel(IRepoClient repoEntity)
         {
-            this.repoEntity = new RepoClient(new AppDbContext());  // Repo type to match class
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = (Client)repoEntity.Detail(pk);
+            Entity = (Client)_repoEntity.Detail(pk);
             if(Entity == null)
             {
                 return RedirectToPage("./NotFound");
