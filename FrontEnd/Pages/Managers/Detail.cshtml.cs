@@ -11,17 +11,17 @@ namespace FrontEnd.Pages.Managers
 {
     public class DetailModel : PageModel
     {
-        private readonly IRepoManager repoEntity;
+        private readonly IRepoManager _repoEntity;
         public Manager Entity { get; set; }  // Change entity type to match class
 
-        public DetailModel()
+        public DetailModel(IRepoManager repoEntity)
         {
-            this.repoEntity = new RepoManager(new AppDbContext());  // Repo type to match class
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = (Manager)repoEntity.Detail(pk);
+            Entity = (Manager)_repoEntity.Detail(pk);
             if(Entity == null)
             {
                 return RedirectToPage("./NotFound");

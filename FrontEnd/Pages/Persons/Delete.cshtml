@@ -1,0 +1,28 @@
+@page
+@model FrontEnd.Pages.Persons.DeleteModel
+@{
+}
+<h2>Do you want to Delete this entity?</h2>
+
+<form method="POST">
+    <input type="hidden" asp-for="Entity.PersonId">
+    <div class="form-group">
+        <label asp-for="Entity.Name"></label>
+        <input asp-for="Entity.Name" class="form-control" readonly >
+    </div>
+    <div>
+        <label asp-for="Entity.DateOfBirth"></label>
+        <input type="date" asp-for="Entity.DateOfBirth" class="form-control" readonly>
+
+    </div>
+    <div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-page="./List" class="btn btn-primary">
+            Cancel
+        </a>
+    </div>
+</form>
+
+<br>
+
+<a asp-page="./List" class="btn-default">Back to List</a>

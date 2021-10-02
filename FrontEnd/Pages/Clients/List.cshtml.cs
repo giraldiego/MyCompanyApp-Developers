@@ -12,22 +12,22 @@ namespace FrontEnd.Pages.Clients
 
     public class ListModel : PageModel
     {
-        private readonly IRepoClient repoEntity;
+        private readonly IRepoClient _repoEntity;
 
-        public ListModel()
+        public ListModel(IRepoClient repoEntity)
         {
-            this.repoEntity = new RepoClient(new AppDbContext());   // Repo type to match class
+            this._repoEntity = repoEntity;
         }
 
-        public IEnumerable<Client> Entities { get; set; }   // Change entity type to match class
+        public IEnumerable<Client> Entities { get; set; }
 
         public void OnGet()
         {
-            Entities = repoEntity.List();   // Explicity convert to entity type to match class
-            foreach (Client entity in Entities)
-            {
-                Console.WriteLine(entity.PersonId + " - " + entity.Name);
-            }
+            Entities = _repoEntity.List();
+            // foreach (Client entity in Entities)
+            // {
+            //     Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            // }
         }
     }
 }

@@ -11,17 +11,17 @@ namespace FrontEnd.Pages.Employees
 {
     public class DetailModel : PageModel
     {
-        private readonly IRepoEmployee repoEntity;
+        private readonly IRepoEmployee _repoEntity;
         public Employee Entity { get; set; }  // Change entity type to match class
 
-        public DetailModel()
+        public DetailModel(IRepoEmployee repoEntity)
         {
-            this.repoEntity = new RepoEmployee(new AppDbContext());  // Repo type to match class
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = (Employee)repoEntity.Detail(pk);
+            Entity = (Employee)_repoEntity.Detail(pk);
             if(Entity == null)
             {
                 return RedirectToPage("./NotFound");

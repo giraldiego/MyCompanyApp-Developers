@@ -12,22 +12,22 @@ namespace FrontEnd.Pages.Managers
 
     public class ListModel : PageModel
     {
-        private readonly IRepoManager repoEntity;
+        private readonly IRepoManager _repoEntity;
 
-        public ListModel()
+        public ListModel(IRepoManager repoEntity)
         {
-            this.repoEntity = new RepoManager(new AppDbContext());   // Repo type to match class
+            this._repoEntity = repoEntity;
         }
 
         public IEnumerable<Manager> Entities { get; set; }   // Change entity type to match class
 
         public void OnGet()
         {
-            Entities = repoEntity.List();   // Explicity convert to entity type to match class
-            foreach (Manager entity in Entities)
-            {
-                Console.WriteLine(entity.PersonId + " - " + entity.Name);
-            }
+            Entities = _repoEntity.List();   // Explicity convert to entity type to match class
+            // foreach (Manager entity in Entities)
+            // {
+            //     Console.WriteLine(entity.PersonId + " - " + entity.Name);
+            // }
         }
     }
 }
