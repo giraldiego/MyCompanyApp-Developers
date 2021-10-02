@@ -11,5 +11,7 @@ namespace Domain
         [Required]
         public DateTime DateOfBirth { get; set; }
 
+        public string Discriminator { get; set; }
+
     }
 }
