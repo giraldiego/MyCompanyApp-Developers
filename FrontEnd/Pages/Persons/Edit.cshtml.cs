@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Persistence;
 using Domain;
 
-namespace FrontEnd
+namespace FrontEnd.Pages.Persons
 {
     public class EditModel : PageModel
     {
