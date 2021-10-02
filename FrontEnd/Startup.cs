@@ -30,6 +30,9 @@ namespace FrontEnd
             services.AddScoped<IRepoClient, RepoClient>();
             services.AddScoped<IRepoEmployee, RepoEmployee>();
             services.AddScoped<IRepoManager, RepoManager>();
+
+            services.AddScoped<IRepoCompany, RepoCompany>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
