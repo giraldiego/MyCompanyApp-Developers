@@ -11,17 +11,17 @@ namespace FrontEnd
 {
     public class DetailModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoPerson _repoEntity;
         public Person Entity { get; set; }
 
-        public DetailModel()
+        public DetailModel(IRepoPerson repoEntity)
         {
-            this.repoEntity = new RepoPerson(new AppDbContext());
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = repoEntity.Detail(pk);
+            Entity = _repoEntity.Detail(pk);
             if(Entity == null)
             {
                 return RedirectToPage("./NotFound");

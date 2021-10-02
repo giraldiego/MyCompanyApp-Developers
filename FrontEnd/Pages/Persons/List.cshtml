@@ -8,7 +8,7 @@
 <div>
     <table class="table">
         <tr>
-            <th>Id</th>
+            @* <th>Id</th> *@
             <th>Name</th>
             <th>Type</th>
             <th>
@@ -21,7 +21,7 @@
         @foreach (var entity in Model.Entities)
         {
             <tr>
-                <td>@entity.PersonId</td>
+                @* <td>@entity.PersonId</td> *@
                 <td>@entity.Name</td>
                 <td>@entity.Discriminator</td>
                 <td>

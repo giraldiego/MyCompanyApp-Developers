@@ -11,21 +11,21 @@ namespace FrontEnd
 {
     public class EditModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoPerson _repoEntity;
 
         [BindProperty]
         public Person Entity { get; set; }
 
-        public EditModel()
+        public EditModel(IRepoPerson repoEntity)
         {
-            this.repoEntity = new RepoPerson(new AppDbContext());
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int? pk)
         {
             if (pk.HasValue)
             {
-                Entity = repoEntity.Detail(pk.Value);
+                Entity = _repoEntity.Detail(pk.Value);
             }
             else
             {
@@ -52,11 +52,11 @@ namespace FrontEnd
 
             if (Entity.PersonId > 0)
             {
-                Entity = repoEntity.Update(Entity);
+                Entity = _repoEntity.Update(Entity);
             }
             else
             {
-                repoEntity.Create(Entity);
+                _repoEntity.Create(Entity);
             }
             return RedirectToPage("./List");
         }

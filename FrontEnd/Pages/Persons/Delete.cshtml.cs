@@ -11,19 +11,19 @@ namespace FrontEnd
 {
     public class DeleteModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoPerson _repoEntity;
 
         [BindProperty]
         public Person Entity { get; set; }
 
-        public DeleteModel()
+        public DeleteModel(IRepoPerson repoEntity)
         {
-            this.repoEntity = new RepoPerson(new AppDbContext());
+            this._repoEntity = repoEntity;
         }
 
         public IActionResult OnGet(int pk)
         {
-            Entity = repoEntity.Detail(pk);
+            Entity = _repoEntity.Detail(pk);
 
             if (Entity == null)
             {
@@ -40,7 +40,7 @@ namespace FrontEnd
         {
             if (Entity.PersonId > 0)
             {
-                bool result = repoEntity.Delete(Entity.PersonId);
+                bool result = _repoEntity.Delete(Entity.PersonId);
                 // Console.WriteLine("Deleting...");
 
             }

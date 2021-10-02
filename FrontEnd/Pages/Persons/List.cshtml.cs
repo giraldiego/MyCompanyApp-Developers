@@ -12,18 +12,18 @@ namespace FrontEnd.Pages.Persons
 
     public class ListModel : PageModel
     {
-        private readonly IRepoPerson repoEntity;
+        private readonly IRepoPerson _repoEntity;
 
         public ListModel(IRepoPerson repoEntity)
         {
-            this.repoEntity = repoEntity;
+            this._repoEntity = repoEntity;
         }
 
         public IEnumerable<Person> Entities { get; set; }
 
         public void OnGet()
         {
-            Entities = repoEntity.List();
+            Entities = _repoEntity.List();
         }
     }
 }
