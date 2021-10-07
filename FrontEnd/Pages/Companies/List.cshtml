@@ -1,0 +1,44 @@
+﻿@page
+@model FrontEnd.Pages.Companies.ListModel
+@{
+}
+
+<h1>List of Companies</h1>
+
+<div>
+    <table class="table">
+        <tr>
+            @* <th>Id</th> *@
+            <th>Name</th>
+            @* <th>Type</th> *@
+            <th>
+                <a class="btn btn-success" asp-page="./Edit">
+                    Add
+                </a>
+            </th>
+        </tr>
+
+        @foreach (var entity in Model.Entities)
+        {
+            <tr>
+                @* <td>@entity.CompanyId</td> *@
+                <td>@entity.Name</td>
+                <td>
+                    <a class="btn btn-info table-btn" asp-page="./Detail" asp-route-pk="@entity.CompanyId">
+                        Detail
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Edit" asp-route-pk="@entity.CompanyId">
+                        Edit
+                    </a>
+                </td>
+                                <td>
+                    <a class="btn btn-danger table-btn" asp-page="./Delete" asp-route-pk="@entity.CompanyId">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

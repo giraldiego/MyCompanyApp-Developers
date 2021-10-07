@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/s7vKfvcwJWbw5ZmHnrfxhIVE5A1KOmPUfYoVKAEZJkrHoOhLVfFRx4Otm8wXiW77OgnKk3n3pd2oERkFjaOYg==",
+  "dgSpecHash": "lYyLE9YvCderYXhtN92hkWqef+u8Uc79GGqdRti0NadW24nJJxISW8Drzbb/Aaob+ptlb8AYpgdfgl2BlG8zFw==",
   "success": true,
-  "projectFilePath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
+  "projectFilePath": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
   "expectedPackageFiles": [
     "/home/giraldiego/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/giraldiego/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
