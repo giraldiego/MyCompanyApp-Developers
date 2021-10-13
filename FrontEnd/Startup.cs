@@ -25,6 +25,8 @@ namespace FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllersWithViews(); // De acuerdo a la guia
+
             services.AddDbContext<AppDbContext>();
             services.AddScoped<IRepoPerson, RepoPerson>();
             services.AddScoped<IRepoClient, RepoClient>();
@@ -55,9 +57,14 @@ namespace FrontEnd
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();  // De acuerdo a la guia
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller-Conference}/{action=Index}/{id?}"
+                );   // De acuerdo a la guia
                 endpoints.MapRazorPages();
             });
         }
