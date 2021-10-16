@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lYyLE9YvCderYXhtN92hkWqef+u8Uc79GGqdRti0NadW24nJJxISW8Drzbb/Aaob+ptlb8AYpgdfgl2BlG8zFw==",
+  "dgSpecHash": "BC2ZtbeBsKi85WTAsgqJpC0x28QSZd6OweNcHgAU17sLAOBEkEr9xYyrfUOj8yuUePM4qJKtFUATFO3ZHrIzTg==",
   "success": true,
   "projectFilePath": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
   "expectedPackageFiles": [
@@ -101,8 +101,8 @@
     "/home/giraldiego/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/giraldiego/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
     "/home/giraldiego/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "/home/giraldiego/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/giraldiego/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
