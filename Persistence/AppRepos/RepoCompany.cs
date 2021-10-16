@@ -49,6 +49,7 @@ namespace Persistence
 
             entityFound.Name = company.Name;
             entityFound.Address = company.Address;
+            entityFound.Employees = company.Employees;
             _appDbContext.SaveChanges();
             return entityFound;
         }

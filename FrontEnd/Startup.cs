@@ -25,11 +25,16 @@ namespace FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllersWithViews(); // De acuerdo a la guia
+
             services.AddDbContext<AppDbContext>();
             services.AddScoped<IRepoPerson, RepoPerson>();
             services.AddScoped<IRepoClient, RepoClient>();
             services.AddScoped<IRepoEmployee, RepoEmployee>();
             services.AddScoped<IRepoManager, RepoManager>();
+
+            services.AddScoped<IRepoCompany, RepoCompany>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,9 +57,14 @@ namespace FrontEnd
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();  // De acuerdo a la guia
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller-Conference}/{action=Index}/{id?}"
+                );   // De acuerdo a la guia
                 endpoints.MapRazorPages();
             });
         }

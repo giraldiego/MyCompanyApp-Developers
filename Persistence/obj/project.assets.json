@@ -5822,11 +5822,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
+      "projectUniqueName": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
+      "projectPath": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/Persistence.csproj",
       "packagesPath": "/home/giraldiego/.nuget/packages/",
-      "outputPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/obj/",
+      "outputPath": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Persistence/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/giraldiego/.nuget/NuGet/NuGet.Config"
@@ -5841,8 +5841,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj": {
-              "projectPath": "/home/giraldiego/Desktop/projects/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj"
+            "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj": {
+              "projectPath": "/home/giraldiego/Desktop/MINTIC/ciclo3/DS-C3-48/proyecto/myCompanyApp/Domain/Domain.csproj"
             }
           }
         }
