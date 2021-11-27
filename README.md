@@ -17,17 +17,17 @@ Para hacer funcionar esta aplicació en su entorno local, seguir los siguientes 
 
 2. Instalar globalmente los siguientes paquetes en su instalación .NET:
 
-`dotnet tool install --global dotnet-ef`
+`dotnet tool install --global dotnet-ef --version 5.0.4`
 
-`dotnet tool update --global dotnet-ef`
+`dotnet tool update --global dotnet-ef --version 5.0.4`
 
 3. En la capa Persistencia (carpeta Persistence) instalar los 4 paquetes siguientes:
 
 ```
-dotnet add package Microsoft.EntityFrameworkCore
-dotnet add package Microsoft.EntityFrameworkCore.Tools
-dotnet add package Microsoft.EntityFrameworkCore.Design
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore --version 5.0.4
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 5.0.4
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.0.4
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.0.4
 ```
 
 Nota: Si esta en linux, hay un script llamado `install_ef.sh` en esa carpeta
@@ -49,11 +49,11 @@ Para mi caso, el servidor corre en el localhost con las credenciales del SA most
 
 Para windows, usualmente será el siguiente string:
 
-`@"Data Source=localhost\sqlexpress;Initial Catalog = MyCompanyAppDB;Integrated Security = True"`
+`@"Data Source=localhost;Initial Catalog = MyCompanyAppDB;Integrated Security = True"`
 
 5.1. Instalar el siguiente paquete en la capa Domain:
 
-`dotnet add package System.ComponentModel.DataAnnotations`
+`dotnet add package System.ComponentModel.DataAnnotations --version 5.0.4`
 
 6. Asegures de compilar los proyectos de la solución:
 
